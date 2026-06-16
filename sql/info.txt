@@ -1,0 +1,103 @@
+//come selezionare tutti i clienti 
+
+SELECT * FROM clienti;
+
+//visualizzare solo nome email
+
+SELECT nome, email
+FROM clienti;
+
+//filtrate tutti i clienti con età maggiore di 30
+SELECT *
+FROM clienti 
+WHERE eta > 30;
+
+//filtare per nome = valore
+SELECT *
+FROM clienti
+WHERE nome = 'Giovanni';
+
+
+//filtare per brange di età
+SELECT *
+FROM clienti
+WHERE eta > 36
+AND eta < 46;
+
+
+//ordinamento decrescente dell'età
+SELECT*
+FROM clienti
+ORDER BY eta DESC;
+
+//ordinamento ascendente dell'età
+SELECT*
+FROM clienti
+ORDER BY eta ASC;
+
+//MODIFICA DELL email
+UPDATE clienti
+SET email = 'mario_nuova@mail.com'
+WHERE id = 1;
+
+//cancellare utenti
+DELETE FROM clienti
+WHERE id= 1;
+
+//funzione di COUNT
+SELECT COUNT(*) AS totale_clienti 
+FROM clienti;
+
+//creo nuova tabella
+CREATE TABLE prodotti(
+
+    	id INT AUTO_INCREMENT PRIMARY KEY,
+    	nome VARCHAR(50),
+    	prezzo DECIMAL(10,2)
+);
+
+
+//inserimento dati
+INSERT INTO prodotti(nome, prezzo)
+VALUES('mouse',18),
+      ('tastiera',54),
+      ('monitor',155);
+
+
+//somma del prezzo
+SELECT SUM(prezzo) AS totale 
+FROM prodotti;
+
+//media del prezzo
+SELECT AVG(prezzo) AS media
+FROM prodotti;
+
+//prezzo massimo
+SELECT MAX(prezzo)
+FROM prodotti;
+
+//prezzo minimo
+SELECT MIN(prezzo)
+FROM prodotti;
+
+
+//filtra nomi che iniziano con la G
+SELECT *
+FROM (clienti)
+WHERE nome LIKE 'G%';
+
+//filtra nomi che Terminano con la i
+SELECT *
+FROM (clienti)
+WHERE nome LIKE '%i';
+
+
+//FILTRA PER RANGE DI ETà
+SELECT *
+FROM clienti
+WHERE eta BETWEEN 20 AND 40;
+
+//cancellare database
+DROP DATABASE nom_database;
+
+

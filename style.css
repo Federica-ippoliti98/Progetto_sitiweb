@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+.menu{
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
+  
+}
+.bg_personal{
+
+    background-color: #000312;
+}
+
+.parallax {
+  
+    background-color: #000513;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax{
+
+    position:relative;
+    height:auto;
+    display:flex;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+
+@media(max-width:768px){
+
+    .parallax{
+
+        min-height:auto;
+        padding-top:60px;
+        padding-bottom:60px;
+
+    }
+
+}
+.parallax1{
+    background-image: url(./asset/img/hero.jpg);
+    height: 100vh;
+    min-height:100vh;}
+
+.bg2{background-image: url(./asset/img/developer2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: auto;}
+
+.gradient-title{
+
+    background: #1E54DE;
+    background: linear-gradient(
+        90deg,
+        rgba(30, 84, 222, 1) 0%,
+        rgba(85, 39, 190, 1) 50%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+    color: transparent;
+
+}
+
+.testocardhome{
+    display:flex;
+    flex-direction:column;
+}
+
+.iconehome{
+    width:2rem;
+    height:2rem;
+    margin:0px;
+    font-size: 1.25rem;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+    color:white;
+
+}
+
+.card{
+  
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: #fff;
+    border-radius: 15px;
+}
+
+.card-equal{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card-equal .card-body{
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.card-equal .btn{
+
+    margin-top: auto;
+
+}
+
+.iconagradiente{
+
+    background: linear-gradient(
+        90deg,
+        rgba(30, 84, 222, 1) 0%,
+        rgba(85, 39, 190, 1) 50%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+    color: transparent;
+
+}
+.spanhero{
+  padding-right: 1rem;
+}
+.spanhero:hover{
+font-size:1.4rem ;
+
+}
+
+
+
+.content {
+  position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+}
+
+.content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 150px;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px 0;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.5s ease, transform 0.3s ease;
+}
+
+/* 🔥 EFECTO HOVER */
+.panel:hover {
+  height: 550px; /* Tamaño de card */
+  transform: scale(1.02);
+}
+
+.panel h3 {
+  font-size: 22px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+
+.panel h3,
+.panel:hover h3 {
+  opacity: 1;
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 100vw;
+  }
+}
