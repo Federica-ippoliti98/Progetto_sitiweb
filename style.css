@@ -1,64 +1,122 @@
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
 }
 
-.menu{
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0)
-  );
-  
-}
-.bg_personal{
+/* =========================
+   MENU
+========================= */
 
+.menu {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0)
+    );
+}
+
+/* =========================
+   BACKGROUND GENERICO
+========================= */
+
+.bg_personal {
     background-color: #000312;
 }
 
+/* =========================
+   PARALLAX BASE
+========================= */
+
 .parallax {
-  
+    position: relative;
+    display: flex;
     background-color: #000513;
-    background-attachment: fixed;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    /* FIX IMPORTANTE */
+    background-attachment: fixed;
+}
+
+/* =========================
+   HERO PARALLAX
+========================= */
+
+.parallax1 {
+    background-image: url(./asset/img/hero.jpg);
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: flex-start; /* evita tagli su mobile */
+    justify-content: flex-start;
+
+    padding-top: 60px;
+    padding-bottom: 0px;
+}
+
+/* =========================
+   CARD E CONTENUTI (BASE SUPPORT)
+========================= */
+
+.hero-checks {
+    min-height: auto;
+}
+
+/* =========================
+   BG SEZIONE 2
+========================= */
+
+.bg2 {
+    background-image: url(./asset/img/developer2.jpg);
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 500px;
 }
 
-.parallax{
+/* =========================
+   RESPONSIVE
+========================= */
 
-    position:relative;
-    height:auto;
-    display:flex;
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+@media (max-width: 768px) {
 
-}
-
-@media(max-width:768px){
-
-    .parallax{
-
-        min-height:auto;
-        padding-top:60px;
-        padding-bottom:60px;
-
+    /* FIX PARALLAX MOBILE (FONDAMENTALE) */
+    .parallax {
+        background-attachment: scroll;
     }
 
-}
-.parallax1{
-    background-image: url(./asset/img/hero.jpg);
-    height: 100vh;
-    min-height:100vh;}
+    .parallax1 {
+        min-height: auto;
 
-.bg2{background-image: url(./asset/img/developer2.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: auto;}
+        padding-top: 60px;
+        padding-bottom: 0px;
+
+        align-items: flex-start;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        line-height: 1.2;
+    }
+
+    .spanhero {
+        display: block;
+        margin-bottom: 10px;
+        padding-right: 0;
+    }
+
+    .bg2 {
+        min-height: 300px;
+    }
+}
 
 .gradient-title{
 
@@ -80,6 +138,10 @@
 .testocardhome{
     display:flex;
     flex-direction:column;
+}
+
+.hero-checks{
+    min-height:auto;
 }
 
 .iconehome{

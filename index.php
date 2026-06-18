@@ -4,30 +4,41 @@
 
     <!--hero-->
     <div class="parallax parallax1"
-         data-speed="0.5"
-         data-image="./asset/img/hero.jpg"
-         style="justify-content:flex-start!important; align-items:center!important;">
+        data-speed="0.5"
+        data-image="./asset/img/hero.jpg"
+        style="justify-content:flex-start!important; align-items:center!important;">
 
         <div class="position-absolute top-0 start-0 end-0 bottom-0"></div>
+
         <div class="container-fluid">
+
             <div class="row">
-                <!-- HERO MOBILE 100% / DESKTOP 50% -->
+
+                <!-- HERO -->
                 <div class="col-12 col-lg-6">
-                    
-                    <div class="text-start p-4 p-md-5 position-relative"
-                         >
 
-                         <!--slogan-->
-                        <div style="margin-top: 40px;">
+                    <div class="text-start p-4 p-md-5 position-relative">
 
-                            <p class="text-uppercase" style ="color: #1d54dd;">SITI WEB PRONTI ALL'USO</p>
+                        <!-- slogan -->
+                        <div>
 
-                            <h1 class="mb-4 mt-2  text-white"> Il tuo sito web<br>
-                            <span class="gradient-title"> è già pronto </span>
+                            <p class="text-uppercase" style="color:#0d6efd;">
+                                SITI WEB PRONTI ALL'USO
+                            </p>
+
+                            <h1 class="mb-4 mt-2 text-white">
+                                Il tuo sito web<br>
+                                <span class="gradient-title">
+                                    è già pronto
+                                </span>
                             </h1>
 
-                            <p class=" text-white ">Acquista siti web professionali già sviluppati in codice HTML, CSS, JavaScript, PHP e Bootstrap. Usali subito o personalizzali come vuoi. </p>
-                           
+                            <p class="text-white">
+                                Acquista siti web professionali già sviluppati in codice HTML,
+                                CSS, JavaScript, PHP e Bootstrap.
+                                Usali subito o personalizzali come vuoi.
+                            </p>
+
                         </div>
 
                         <!-- CARD RESPONSIVE -->
@@ -38,9 +49,10 @@
 
                                 <div class="card-body">
 
-                                    <div class=" d-flex flex-row gap-3 align-items-start mb-3">
+                                    <div class="d-flex flex-row gap-3 align-items-start mb-3">
 
-                                        <i class="bi bi-code-slash iconehome" style="background-color:#1d54dd;"></i>
+                                        <i class="bi bi-code-slash iconehome"
+                                        style="background-color:#0d6efd;"></i>
 
                                         <div class="testocardhome">
 
@@ -53,12 +65,18 @@
                                                 il sito in completa autonomia.
                                             </p>
 
-                                        </div>                        
+                                        </div>
 
                                     </div>
-                                    <a href="#" class="btn text-white" style="background-color:#1d54dd;">Scopri i siti</a>
+
+                                    <a href="#"
+                                    class="btn text-white"
+                                    style="background-color:#0d6efd;">
+                                        Scopri i siti
+                                    </a>
+
                                 </div>
-                               
+
                             </div>
 
                             <!-- CARD 2 -->
@@ -66,9 +84,10 @@
 
                                 <div class="card-body">
 
-                                    <div class=" d-flex flex-row gap-3 align-items-start mb-3">
+                                    <div class="d-flex flex-row gap-3 align-items-start mb-3">
 
-                                        <i class="bi bi-person iconehome" style="background-color:#5527be;"></i>
+                                        <i class="bi bi-person iconehome"
+                                        style="background-color:#5527be;"></i>
 
                                         <div class="testocardhome">
 
@@ -77,50 +96,72 @@
                                             </h5>
 
                                             <p class="card-text">
-                                                Affidaci le modifiche che desideri. Consulenza personalizzata e preventivo su misura per te.
+                                                Affidaci le modifiche che desideri.
+                                                Consulenza personalizzata e preventivo
+                                                su misura per te.
                                             </p>
 
                                         </div>
-                                            
+
                                     </div>
-                                    <a href="#" class="btn text-white" style="background-color:#5527be;">Prenota consulenza</a>
+
+                                    <a href="#"
+                                    class="btn text-white"
+                                    style="background-color:#6610f2;">
+                                        Prenota consulenza
+                                    </a>
+
                                 </div>
-                               
 
                             </div>
 
-
                         </div>
 
-
                     </div>
-                          
+
                 </div>
-                
-                <!--check caratteristiche-->
-                <div class="text-center text-md-start position-relative mt-5 text-white px-4 px-md-5 mb-5" style="font-size:1.2rem; height:1.4rem;">
-                    
-                    <span class="spanhero"><i class="bi bi-check2-circle iconagradiente"></i> Codice 100% tuo </span>
-                    <span class="spanhero"><i class="bi bi-check2-circle iconagradiente"></i> Adatti a ogni tipo di attività</span>
-                    <span class="spanhero"><i class="bi bi-check2-circle iconagradiente"></i> Senza CMS</span>
-                    <span class="spanhero"><i class="bi bi-check2-circle iconagradiente"></i> Supporto dedicato</span>
+
+                <!-- CHECK -->
+                <div class="col-12 text-center text-md-start position-relative mt-4 text-white px-4 px-md-5 mb-5"
+                    style="font-size:1.2rem;">
+
+                    <span class="spanhero">
+                        <i class="bi bi-check2-circle iconagradiente"></i>
+                        Codice 100% tuo
+                    </span>
+
+                    <span class="spanhero">
+                        <i class="bi bi-check2-circle iconagradiente"></i>
+                        Adatti a ogni tipo di attività
+                    </span>
+
+                    <span class="spanhero">
+                        <i class="bi bi-check2-circle iconagradiente"></i>
+                        Senza CMS
+                    </span>
+
+                    <span class="spanhero">
+                        <i class="bi bi-check2-circle iconagradiente"></i>
+                        Supporto dedicato
+                    </span>
 
                 </div>
 
             </div>
 
         </div>
+
     </div>
 
     
-    <div class="container-fluid px-4 px-md-5  text-center" style="margin-top:160px;">
+    <div class="container-fluid px-4 px-md-5  text-center" style="margin-top:80px;">
         
         <!-- scelta tipologia di sito -->
-        <p class="text-uppercase mb-0" style ="color: #1d54dd;">Scegli tra le nostre categorie</p>
+        <p class="text-uppercase mb-0" style ="color: #0d6efd;">Scegli tra le nostre categorie</p>
         <h2 class="text-white mb-5">Trova il sito giusto per il tuo progetto</h2>
 
         <!-- card tipologia di sito -->
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4" style="margin-bottom:160px;">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4" style="margin-bottom:80px;">
 
             <!-- CARD 1 -->
             <div class="col">
@@ -135,7 +176,7 @@
 
                         <div class="d-flex align-items-center gap-2">
                             <i class="bi bi-rocket-takeoff"
-                            style="font-size:2rem; color:#1d54dd;"></i>
+                            style="font-size:2rem; color:#0d6efd;"></i>
 
                             <h5 class="card-title mb-0">
                                 Landing Page
@@ -148,7 +189,7 @@
 
                         <a href="#"
                         class="mt-auto d-flex align-items-center text-decoration-none fw-bold"
-                        style="color:#1d54dd;">
+                        style="color:#0d6efd;">
                             <span class="pe-1">Scopri di più</span>
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -170,7 +211,7 @@
 
                         <div class="d-flex align-items-center gap-2">
                             <i class="bi bi-display"
-                            style="font-size:2rem; color:#1d54dd;"></i>
+                            style="font-size:2rem; color:#0d6efd;"></i>
 
                             <h5 class="card-title mb-0">
                                 Siti Vetrina
@@ -183,7 +224,7 @@
 
                         <a href="#"
                         class="mt-auto d-flex align-items-center text-decoration-none fw-bold"
-                        style="color:#1d54dd;">
+                        style="color:#0d6efd;">
                             <span class="pe-1">Scopri di più</span>
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -205,7 +246,7 @@
 
                         <div class="d-flex align-items-center gap-2">
                             <i class="bi bi-cart4"
-                            style="font-size:2rem; color:#1d54dd;"></i>
+                            style="font-size:2rem; color:#0d6efd;"></i>
 
                             <h5 class="card-title mb-0">
                                 Siti E-commerce
@@ -218,7 +259,7 @@
 
                         <a href="#"
                         class="mt-auto d-flex align-items-center text-decoration-none fw-bold"
-                        style="color:#1d54dd;">
+                        style="color:#0d6efd;">
                             <span class="pe-1">Scopri di più</span>
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -240,7 +281,7 @@
 
                         <div class="d-flex align-items-center gap-2">
                             <i class="bi bi-calendar-week"
-                            style="font-size:2rem; color:#1d54dd;"></i>
+                            style="font-size:2rem; color:#0d6efd;"></i>
 
                             <h5 class="card-title mb-0">
                                 Siti Prenotazioni
@@ -253,7 +294,7 @@
 
                         <a href="#"
                         class="mt-auto d-flex align-items-center text-decoration-none fw-bold"
-                        style="color:#1d54dd;">
+                        style="color:#0d6efd;">
                             <span class="pe-1">Scopri di più</span>
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -275,7 +316,7 @@
 
                         <div class="d-flex align-items-center gap-2">
                             <i class="bi bi-box"
-                            style="font-size:2rem; color:#1d54dd;"></i>
+                            style="font-size:2rem; color:#0d6efd;"></i>
 
                             <h5 class="card-title mb-0">
                                 Web Application
@@ -288,7 +329,7 @@
 
                         <a href="#"
                         class="mt-auto d-flex align-items-center text-decoration-none fw-bold"
-                        style="color:#1d54dd;">
+                        style="color:#0d6efd;">
                             <span class="pe-1">Scopri di più</span>
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -301,7 +342,7 @@
 
         
         <!-- come funziona -->
-        <p class="text-uppercase  mb-0" style ="color: #1d54dd; margin-top:80px;">Semplice veloce efficace</p>
+        <p class="text-uppercase  mb-0" style ="color: #0d6efd; margin-top:80px;">Semplice veloce efficace</p>
         <h2 class="text-white mb-5 ">Come Funziona</h2>
         
         <div class="mt-5 row row-cols-2 row-cols-lg-4 g-3 align-items-stretch" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);border-radius: 15px;">
@@ -395,7 +436,7 @@
     
 
     <!--servizio su misura-->
-    <div style="margin-top:160px;">
+    <div style="margin-top:80px;">
         <div class="container-fluid">
             <div class="row">
                 <!-- MOBILE 100% / DESKTOP 50% -->
@@ -406,7 +447,7 @@
                         <!--slogan-->
                         <div style="margin-top: 40px;">
 
-                            <p class="text-uppercase" style ="color: #1d54dd;">Servizio su misura</p>
+                            <p class="text-uppercase" style ="color: #0d6efd;">Servizio su misura</p>
 
                             <h2 class="mb-4 mt-2  text-white">Siti web per esigenze uniche<br></h2>
 
@@ -422,7 +463,7 @@
                             <br><span class="text-white" style="padding-right:20px; font-size:1.1rem;"><i class="bi bi-check2-circle iconagradiente" style="padding-right:5px;"></i> Personalizzazione totale</span>
                             <br><span class="text-white" style="padding-right:20px; font-size:1.1rem;"><i class="bi bi-check2-circle iconagradiente" style="padding-right:5px;"></i> sei tu il vero propietario</span>
                             </div>
-                            <a href="#" class="btn text-white text-uppercase" style="background-color:#1d54dd; margin:40px 0 80px 0; ">Richiedi una consulenza</a>
+                            <a href="#" class="btn text-white text-uppercase" style="background-color:#0d6efd; margin:40px 0 80px 0; ">Richiedi una consulenza</a>
 
                            
                         </div>
