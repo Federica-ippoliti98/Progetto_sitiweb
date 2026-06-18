@@ -196,7 +196,8 @@ include 'header_dashboard.php';
             <section id="client" class="d-none">
 
                 <?php include 'users.php'; ?>
-                
+
+            
 
             </section>
 
@@ -318,4 +319,16 @@ function openSection(section) {
     }
 }
 
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const hash = window.location.hash.replace('#', '');
+
+    if (hash) {
+        openSection(hash);
+    } else {
+        openSection('dashboard');
+    }
+});
 </script>
