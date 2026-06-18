@@ -258,9 +258,9 @@ font-size:1.4rem ;
   transition: height 0.5s ease, transform 0.3s ease;
 }
 
-/* 🔥 EFECTO HOVER */
+/* EFETTO HOVER */
 .panel:hover {
-  height: 550px; /* Tamaño de card */
+  height: 550px; 
   transform: scale(1.02);
 }
 
