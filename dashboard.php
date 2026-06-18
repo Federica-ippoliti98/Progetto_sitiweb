@@ -321,14 +321,32 @@ function openSection(section) {
 
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", () => {
 
     const hash = window.location.hash.replace('#', '');
 
-    if (hash) {
-        openSection(hash);
-    } else {
-        openSection('dashboard');
+    const valid = [
+        'dashboard',
+        'analytics',
+        'client',
+        'products',
+        'manageProducts',
+        'custom',
+        'manageCustom',
+        'booking'
+    ];
+
+    function init() {
+
+        if (hash && valid.includes(hash)) {
+            openSection(hash);
+        } else {
+            openSection('dashboard');
+        }
     }
+
+    // doppio safe check (evita race condition browser)
+    requestAnimationFrame(init);
+
 });
 </script>
