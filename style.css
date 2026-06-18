@@ -120,12 +120,8 @@
 
 .gradient-title{
 
-    background: #1E54DE;
-    background: linear-gradient(
-        90deg,
-        rgba(30, 84, 222, 1) 0%,
-        rgba(85, 39, 190, 1) 50%
-    );
+    background: #0d6efd;
+    background: linear-gradient(90deg,rgba(13, 110, 253, 1) 0%, rgba(102, 16, 242, 1) 50%);
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -195,11 +191,7 @@
 
 .iconagradiente{
 
-    background: linear-gradient(
-        90deg,
-        rgba(30, 84, 222, 1) 0%,
-        rgba(85, 39, 190, 1) 50%
-    );
+    background: linear-gradient(90deg,rgba(13, 110, 253, 1) 0%, rgba(102, 16, 242, 1) 50%);
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -444,31 +436,20 @@ body {
 
 /* ACTIVE DASH*/
 .active-dash {
-    background: linear-gradient(
-        90deg,
-        rgba(30, 84, 222, 1) 0%,
-        rgba(85, 39, 190, 1) 50%
-    ) !important;
+    background: linear-gradient(90deg,rgba(13, 110, 253, 1) 0%, rgba(102, 16, 242, 1) 50%) !important;
 
     color:white;
 }
 
 /* BUTTON DASH */
 .btn-dash {
-    background: linear-gradient(
-        90deg,
-        rgba(30, 84, 222, 1) 0%,
-        rgba(85, 39, 190, 1) 50%
-    );
+    background: linear-gradient(90deg,rgba(13, 110, 253, 1) 0%, rgba(102, 16, 242, 1) 50%);
 }
 
 /* TEXT DASH */
 .text-dash {
-    background: linear-gradient(
-        90deg,
-        rgba(30, 84, 222, 1) 0%,
-        rgba(85, 39, 190, 1) 50%
-    );
+
+    background: linear-gradient(90deg,rgba(13, 110, 253, 1) 0%, rgba(102, 16, 242, 1) 50%);
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

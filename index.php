@@ -87,7 +87,7 @@
                                     <div class="d-flex flex-row gap-3 align-items-start mb-3">
 
                                         <i class="bi bi-person iconehome"
-                                        style="background-color:#5527be;"></i>
+                                        style="background-color:#6610f2;"></i>
 
                                         <div class="testocardhome">
 
@@ -351,11 +351,11 @@
                 <div class="d-flex flex-column h-100">
                     <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
                         <p class="mb-0"
-                        style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #5527be;">
+                        style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #6610f2;">
                             1
                         </p>
                         <i class="bi bi-search"
-                        style="font-size:2.5rem; color:#5527be; margin-left:10px;"></i>
+                        style="font-size:2.5rem; color:#6610f2; margin-left:10px;"></i>
                     </div>
 
                     <h5 class="text-center text-white">
@@ -372,11 +372,11 @@
                 <div class="d-flex flex-column h-100">
                     <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
                         <p class="mb-0"
-                        style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #5527be;">
+                        style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #6610f2;">
                             2
                         </p>
                         <i class="bi bi-cart3"
-                        style="font-size:2.5rem; color:#5527be; margin-left:10px;"></i>
+                        style="font-size:2.5rem; color:#6610f2; margin-left:10px;"></i>
                     </div>
 
                     <h5 class="text-center text-white">
@@ -393,11 +393,11 @@
                 <div class="d-flex flex-column h-100">
                     <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
                         <p class="mb-0"
-                        style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #5527be;">
+                        style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #6610f2;">
                             3
                         </p>
                         <i class="bi bi-code-slash"
-                        style="font-size:2.5rem; color:#5527be;margin-left:10px;"></i>
+                        style="font-size:2.5rem; color:#6610f2;margin-left:10px;"></i>
                     </div>
 
                     <h5 class="text-center text-white">
@@ -414,11 +414,11 @@
                 <div class="d-flex flex-column h-100">
                     <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
                         <p class="mb-0"
-                        style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #5527be;">
+                        style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #6610f2;">
                             4
                         </p>
                         <i class="bi bi-rocket-takeoff"
-                        style="font-size:2.5rem; color:#5527be;margin-left:10px;"></i>
+                        style="font-size:2.5rem; color:#6610f2;margin-left:10px;"></i>
                     </div>
 
                     <h5 class="text-center text-white">

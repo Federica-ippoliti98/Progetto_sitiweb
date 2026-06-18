@@ -162,3 +162,4 @@ class Product
         return $stmt->execute([':id' => $id]);
     }
 }
+?>
