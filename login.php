@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
                 <div class="col-lg-5">
 
-                    <div class="p-4 rounded shadow" style="border: 1px solid #FFC107">
+                    <div class="p-4 rounded shadow" style="border: 1px solid ">
                         <h2 class="fw-bold text-warning mb-4 text-center">Login</h2>
                     </div>
 
@@ -106,11 +106,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                             required>
                         </div>
 
-                        <button type="submit" class="btn btn-outline-warning w-100">Login</button>
+                        <button type="submit" class="btn btn-dash w-100 text-white">Login</button>
 
                         <p class="text-white text-center mt-3 mb-0">
                             No account yet?
-                            <a href="register.php" class="text-warning">Register</a>
+                            <a href="register.php" class="text-dash">Register</a>
                         </p>
 
 

@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS products (
     description TEXT,
     price DECIMAL(10,2) NOT NULL,
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
-    file_path VARCHAR(255) DEFAULT NULL,
-    image_path VARCHAR(255) DEFAULT NULL,
+    file_path VARCHAR(255) NOT NULL,
+    image_path VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 

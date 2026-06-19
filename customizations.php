@@ -1,4 +1,3 @@
-
 <?php
 
 require_once __DIR__ . '/helpers/auth.php';
@@ -14,7 +13,10 @@ $success = '';
 
 // -------------------------------- CREATE CUSTOMIZATION --------------------------------
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'create') {
+if (
+    $_SERVER['REQUEST_METHOD'] === 'POST'
+    && ($_POST['action'] ?? '') === 'create_customization'
+) {
 
     $name = trim($_POST['name'] ?? '');
     $description = trim($_POST['description'] ?? '');
@@ -47,7 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'creat
 
 // -------------------------------- DELETE CUSTOMIZATION --------------------------------
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delete') {
+if (
+    $_SERVER['REQUEST_METHOD'] === 'POST'
+    && ($_POST['action'] ?? '') === 'delete_customization'
+) {
 
     $customizationId = (int) ($_POST['customization_id'] ?? 0);
 
@@ -64,7 +69,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delet
 
 // -------------------------------- TOGGLE STATUS --------------------------------
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'toggle_active') {
+if (
+    $_SERVER['REQUEST_METHOD'] === 'POST'
+    && ($_POST['action'] ?? '') === 'toggle_customization'
+) {
 
     $customizationId = (int) ($_POST['customization_id'] ?? 0);
 
@@ -80,8 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'toggl
 
 
 $customizations = Customization::findAllCustom();
-
-include 'header_dashboard.php';
 ?>
 
 <main class="dashboard-content">
@@ -98,6 +104,27 @@ include 'header_dashboard.php';
 
     </header>
 
+    <?php if (!empty($success)): ?>
+
+        <div class="alert alert-success">
+            <?= htmlspecialchars($success) ?>
+        </div>
+
+    <?php endif; ?>
+
+    <?php if (!empty($errors)): ?>
+
+        <div class="alert alert-danger">
+
+            <?php foreach ($errors as $error): ?>
+
+                <div><?= htmlspecialchars($error) ?></div>
+
+            <?php endforeach; ?>
+
+        </div>
+
+    <?php endif; ?>
 
     <div class="row g-4">
 
@@ -117,7 +144,10 @@ include 'header_dashboard.php';
 
                 <form method="post">
 
-                    <input type="hidden" name="action" value="create">
+                    <input
+                        type="hidden"
+                        name="action"
+                        value="create_customization">
 
                     <div class="mb-3">
 
@@ -134,7 +164,6 @@ include 'header_dashboard.php';
 
                     </div>
 
-
                     <div class="mb-3">
 
                         <label class="form-label">
@@ -147,7 +176,6 @@ include 'header_dashboard.php';
                             rows="4"><?= htmlspecialchars($_POST['description'] ?? '') ?></textarea>
 
                     </div>
-
 
                     <div class="mb-3">
 
@@ -166,26 +194,24 @@ include 'header_dashboard.php';
 
                     </div>
 
-
                     <div class="form-check mb-3">
 
                         <input
                             type="checkbox"
                             class="form-check-input"
-                            id="is_active"
+                            id="custom_is_active"
                             name="is_active"
                             <?= isset($_POST['is_active']) || !$_POST ? 'checked' : '' ?>>
 
                         <label
                             class="form-check-label"
-                            for="is_active">
+                            for="custom_is_active">
 
                             Active
 
                         </label>
 
                     </div>
-
 
                     <button
                         type="submit"
@@ -203,8 +229,6 @@ include 'header_dashboard.php';
 
         </div>
 
-
-
         <!-- TABLE -->
 
         <div class="col-lg-8">
@@ -218,7 +242,6 @@ include 'header_dashboard.php';
                     All Customizations
 
                 </h4>
-
 
                 <div class="table-responsive">
 
@@ -249,7 +272,6 @@ include 'header_dashboard.php';
                                         € <?= number_format($customization['price'], 2) ?>
                                     </td>
 
-
                                     <td>
 
                                         <?php if ($customization['is_active']): ?>
@@ -268,7 +290,6 @@ include 'header_dashboard.php';
 
                                     </td>
 
-
                                     <td class="text-end">
 
                                         <a
@@ -279,7 +300,6 @@ include 'header_dashboard.php';
 
                                         </a>
 
-
                                         <form
                                             method="post"
                                             class="d-inline">
@@ -287,7 +307,7 @@ include 'header_dashboard.php';
                                             <input
                                                 type="hidden"
                                                 name="action"
-                                                value="toggle_active">
+                                                value="toggle_customization">
 
                                             <input
                                                 type="hidden"
@@ -305,7 +325,6 @@ include 'header_dashboard.php';
 
                                         </form>
 
-
                                         <form
                                             method="post"
                                             class="d-inline">
@@ -313,7 +332,7 @@ include 'header_dashboard.php';
                                             <input
                                                 type="hidden"
                                                 name="action"
-                                                value="delete">
+                                                value="delete_customization">
 
                                             <input
                                                 type="hidden"
@@ -350,4 +369,3 @@ include 'header_dashboard.php';
     </div>
 
 </main>
-
