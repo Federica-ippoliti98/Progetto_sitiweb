@@ -1,8 +1,10 @@
 <?php
 
 require_once __DIR__ . '/helpers/auth.php';
+require_once __DIR__ . '/classes/Customization.php';
 
 requireLogin();
+
 
 $user = currentUser() ?? [];
 $isAdmin = ($user['role'] ?? '') === 'admin';
@@ -234,11 +236,7 @@ include 'header_dashboard.php';
             <!-- MANAGE CUSTOM -->
             <section id="manageCustom" class="d-none">
 
-                <h2>Manage Customizations</h2>
-
-                <p class="text-muted">
-                    Streamline your workflow with our intuitive dashboard.
-                </p>
+                <?php include 'customizations.php'; ?>
 
             </section>
 
