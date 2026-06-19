@@ -93,13 +93,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     <section class="bg_personal min-vh-100 py-5">
 
-        <div class="container">
+        <div class="container ">
 
-            <div class="row">
+            <div class="row justify-content-center m-2">
 
-                <div class="col-lg-6">
+                <div class="col-lg-6 card p-5">
 
-                    <h2 class="fw-bold text-warning text-center mb-4">Register</h2>
+                    <h2 class="fw-bold text-white text-center mb-4">Register</h2>
                     
 
                     <?php if($success): ?>
@@ -164,10 +164,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         </div>
 
                         
-                        <button type="submit" class="btn btn-outline-warning w-100">Create Account</button>
+                        <button type="submit" class="btn btn-dash text-white w-100 mb-3">Create Account</button>
 
                         <p>Already have an account?
-                            <a href="login.php" class="text-warning">Login</a>
+                            <a href="login.php" class="text-dash">Login</a>
                         </p>
 
 

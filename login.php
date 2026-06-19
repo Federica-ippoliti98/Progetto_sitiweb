@@ -64,13 +64,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
          <div class="container">
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center m-2">
 
-                <div class="col-lg-5">
+                <div class="col-lg-5 card p-5 ">
 
-                    <div class="p-4 rounded shadow" style="border: 1px solid ">
-                        <h2 class="fw-bold text-warning mb-4 text-center">Login</h2>
+                    
+                    <div>
+                        <h2 class="fw-bold text-center mb-4 text-white ">Login</h2>
                     </div>
+    
 
                     <?php if($errors): ?>
                         <div class="alert alert-danger">
