@@ -22,8 +22,10 @@
                         <!-- slogan -->
                         <div>
 
-                            <p class="text-uppercase" style="color:#0d6efd;">
+                            <p class="text-uppercase" style="color:#49518f;">
+                               
                                 SITI WEB PRONTI ALL'USO
+                                
                             </p>
 
                             <h1 class="mb-4 mt-2 text-white">
@@ -157,8 +159,8 @@
     <div class="container-fluid px-4 px-md-5  text-center" style="margin-top:80px;">
         
         <!-- scelta tipologia di sito -->
-        <p class="text-uppercase mb-0" style ="color: #0d6efd;">Scegli tra le nostre categorie</p>
-        <h2 class="text-white mb-5">Trova il sito giusto per il tuo progetto</h2>
+        <p class="text-uppercase mb-0" style ="color: #49518f;">Scegli tra le nostre categorie</p>
+        <h2 class="text-white mb-5">Trova il sito <span class="gradient-title">giusto</span> per il tuo progetto</h2>
 
         <!-- card tipologia di sito -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4" style="margin-bottom:80px;">
@@ -342,103 +344,106 @@
 
         
         <!-- come funziona -->
-        <p class="text-uppercase  mb-0" style ="color: #0d6efd; margin-top:80px;">Semplice veloce efficace</p>
-        <h2 class="text-white mb-5 ">Come Funziona</h2>
         
-        <div class="mt-5 row row-cols-2 row-cols-lg-4 g-3 align-items-stretch" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);border-radius: 15px;">
+        <div style="margin-top:80px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);border-radius: 15px;">
+            
+            <p class="mt-5 text-uppercase  mb-0" style ="color: #49518f; ">Semplice veloce efficace</p>
+            <h2 class="text-white mb-0 ">Come Funziona</h2>
 
-            <div class="col">
-                <div class="d-flex flex-column h-100">
-                    <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
-                        <p class="mb-0"
-                        style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #6610f2;">
-                            1
+            <div class="mt-2 row row-cols-2 row-cols-lg-4 g-3 align-items-stretch" >
+
+                <div class="col">
+                    <div class="d-flex flex-column h-100">
+                        <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+                            <p class="mb-0"
+                            style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #6610f2;">
+                                1
+                            </p>
+                            <i class="bi bi-search"
+                            style="font-size:2.5rem; color:#6610f2; margin-left:10px;"></i>
+                        </div>
+
+                        <h5 class="text-center text-white">
+                            <b>Scegli il sito</b>
+                        </h5>
+
+                        <p class="text-white text-center">
+                            Sfoglia il catalogo e trova il progetto perfetto per te.
                         </p>
-                        <i class="bi bi-search"
-                        style="font-size:2.5rem; color:#6610f2; margin-left:10px;"></i>
                     </div>
-
-                    <h5 class="text-center text-white">
-                        <b>Scegli il sito</b>
-                    </h5>
-
-                    <p class="text-white text-center">
-                        Sfoglia il catalogo e trova il progetto perfetto per te.
-                    </p>
                 </div>
-            </div>
 
-            <div class="col">
-                <div class="d-flex flex-column h-100">
-                    <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
-                        <p class="mb-0"
-                        style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #6610f2;">
-                            2
+                <div class="col">
+                    <div class="d-flex flex-column h-100">
+                        <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+                            <p class="mb-0"
+                            style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #6610f2;">
+                                2
+                            </p>
+                            <i class="bi bi-cart3"
+                            style="font-size:2.5rem; color:#6610f2; margin-left:10px;"></i>
+                        </div>
+
+                        <h5 class="text-center text-white">
+                            <b>Acquista</b>
+                        </h5>
+
+                        <p class="text-white text-center">
+                            Ricevi subito il codice completo e tutti i file del progetto.
                         </p>
-                        <i class="bi bi-cart3"
-                        style="font-size:2.5rem; color:#6610f2; margin-left:10px;"></i>
                     </div>
-
-                    <h5 class="text-center text-white">
-                        <b>Acquista</b>
-                    </h5>
-
-                    <p class="text-white text-center">
-                        Ricevi subito il codice completo e tutti i file del progetto.
-                    </p>
                 </div>
-            </div>
 
-            <div class="col">
-                <div class="d-flex flex-column h-100">
-                    <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
-                        <p class="mb-0"
-                        style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #6610f2;">
-                            3
+                <div class="col">
+                    <div class="d-flex flex-column h-100">
+                        <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+                            <p class="mb-0"
+                            style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #6610f2;">
+                                3
+                            </p>
+                            <i class="bi bi-code-slash"
+                            style="font-size:2.5rem; color:#6610f2;margin-left:10px;"></i>
+                        </div>
+
+                        <h5 class="text-center text-white">
+                            <b>Personalizza</b>
+                        </h5>
+
+                        <p class="text-white text-center">
+                            Modifica in autonomia oppure affidati a noi per una soluzione su misura.
                         </p>
-                        <i class="bi bi-code-slash"
-                        style="font-size:2.5rem; color:#6610f2;margin-left:10px;"></i>
                     </div>
-
-                    <h5 class="text-center text-white">
-                        <b>Personalizza</b>
-                    </h5>
-
-                    <p class="text-white text-center">
-                        Modifica in autonomia oppure affidati a noi per una soluzione su misura.
-                    </p>
                 </div>
-            </div>
 
-            <div class="col">
-                <div class="d-flex flex-column h-100">
-                    <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
-                        <p class="mb-0"
-                        style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #6610f2;">
-                            4
+                <div class="col">
+                    <div class="d-flex flex-column h-100">
+                        <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+                            <p class="mb-0"
+                            style="color:white; width:2rem; height:2rem; font-size:1.25rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; border:1px solid #6610f2;">
+                                4
+                            </p>
+                            <i class="bi bi-rocket-takeoff"
+                            style="font-size:2.5rem; color:#6610f2;margin-left:10px;"></i>
+                        </div>
+
+                        <h5 class="text-center text-white">
+                            <b>Vai online</b>
+                        </h5>
+
+                        <p class="text-white text-center">
+                            Carica il sito e lancia il tuo business.
                         </p>
-                        <i class="bi bi-rocket-takeoff"
-                        style="font-size:2.5rem; color:#6610f2;margin-left:10px;"></i>
                     </div>
-
-                    <h5 class="text-center text-white">
-                        <b>Vai online</b>
-                    </h5>
-
-                    <p class="text-white text-center">
-                        Carica il sito e lancia il tuo business.
-                    </p>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
     
 
     <!--servizio su misura-->
-    <div style="margin-top:80px;">
+    <div class="bg2" style="margin-top:80px;">
         <div class="container-fluid ">
-            <div class="row bg2">
+            <div class="row ">
                 <!-- MOBILE 100% / DESKTOP 50% -->
                 <div class="col-12 col-lg-6">
                      
@@ -447,9 +452,9 @@
                         <!--slogan-->
                         <div style="margin-top: 40px;">
 
-                            <p class="text-uppercase" style ="color: #0d6efd;">Servizio su misura</p>
+                            <p class="text-uppercase" style ="color: #49518f;">Servizio su misura</p>
 
-                            <h2 class="mb-4 mt-2  text-white">Siti web per esigenze uniche<br></h2>
+                            <h2 class="mb-4 mt-2  text-white">Siti web per <span class="gradient-title">esigenze uniche</span><br></h2>
 
                             <p class=" text-white" style="font-size:1.2rem;">
                                 Raccontaci il tuo progetto. Analizzeremo le tue esigenze e realizzeremo soluzioni su misura per il tuo business.
