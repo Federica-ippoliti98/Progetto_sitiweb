@@ -66,17 +66,19 @@ CREATE TABLE IF NOT EXISTS purchasescustom (
     FOREIGN KEY (customization_id) REFERENCES customizations(id)
 ) ENGINE=InnoDB;
 
--- CONSULTATIONS
-CREATE TABLE IF NOT EXISTS consultations (
+-- BOOKING
+CREATE TABLE IF NOT EXISTS bookings (
+
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    product_id INT NOT NULL,
-    message TEXT,
-    scheduled_date DATETIME NOT NULL,
+    scheduled_date DATE NOT NULL,
     scheduled_time TIME NOT NULL,
     status ENUM('pending','cancelled','completed') NOT NULL DEFAULT 'pending',
+    notes TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (product_id) REFERENCES products(id)
+
+    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+  
+
 ) ENGINE=InnoDB;
 

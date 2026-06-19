@@ -437,8 +437,8 @@
 
     <!--servizio su misura-->
     <div style="margin-top:80px;">
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container-fluid ">
+            <div class="row bg2">
                 <!-- MOBILE 100% / DESKTOP 50% -->
                 <div class="col-12 col-lg-6">
                      
@@ -472,7 +472,7 @@
 
                 <!--seconda-->
 
-                <div class="col-12 col-lg-6 bg2">
+                <div class="col-12 col-lg-6 ">
 
                 
                 </div>

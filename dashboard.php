@@ -245,12 +245,7 @@ include 'header_dashboard.php';
             <!-- BOOKING -->
             <section id="booking" class="d-none">
 
-                <h2>Booking</h2>
-
-                <p class="text-muted">
-                    Streamline your workflow with our intuitive dashboard.
-                </p>
-
+                <?php include 'bookings.php'; ?>
             </section>
 
         </div>
