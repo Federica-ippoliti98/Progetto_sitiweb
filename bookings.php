@@ -164,7 +164,7 @@ include 'header_dashboard.php';
                             <td>
                                 <?= htmlspecialchars($b['user_name']) ?>
                                 <br>
-                                <small class="text-white-50">
+                                <small class="text-dark-50">
                                     <?= htmlspecialchars($b['user_email']) ?>
                                 </small>
                             </td>
@@ -176,12 +176,12 @@ include 'header_dashboard.php';
                                 <?php if (!empty($b['notes'])): ?>
                                     <small><?= htmlspecialchars($b['notes']) ?></small>
                                 <?php else: ?>
-                                    <small class="text-white-50">—</small>
+                                    <small class="text-dark-50">—</small>
                                 <?php endif; ?>
                             </td>
 
                             <td>
-                                <span class="badge badge-status badge-<?= htmlspecialchars($b['status']) ?>">
+                                <span class="text-dark badge badge-status badge-<?= htmlspecialchars($b['status']) ?>">
                                     <?= htmlspecialchars($b['status']) ?>
                                 </span>
                             </td>
