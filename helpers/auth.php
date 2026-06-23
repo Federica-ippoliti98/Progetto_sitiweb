@@ -23,7 +23,7 @@ function requireAdmin(): void
 
     if(($_SESSION['user_role'] ?? '') !== 'admin'){
 
-        header('Location : index.php');
+        header('Location: index.php');
         exit;
 
     }

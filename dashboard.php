@@ -1,18 +1,17 @@
 <?php
 
 require_once __DIR__ . '/helpers/auth.php';
-require_once __DIR__ . '/classes/Customization.php';
 
 requireLogin();
 
 
 $user = currentUser() ?? [];
 $isAdmin = ($user['role'] ?? '') === 'admin';
+$isClient = ($user['role'] ?? '') === 'client';
 
 include 'header_dashboard.php';
 ?>
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
 
 <!-- WRAPPER RESPONSIVE -->
 <div class="d-flex dashboard-wrapper">
@@ -38,6 +37,7 @@ include 'header_dashboard.php';
             <!-- DASHBOARD -->
             <a href="#"
                class="sidebar-link active-dash text-decoration-none p-3"
+               data-section="dashboard"
                onclick="openSection('dashboard'); return false;">
 
                 <i class="fa-solid fa-house me-3"></i>
@@ -47,9 +47,49 @@ include 'header_dashboard.php';
                 </span>
             </a>
 
+            <!-- PRODUCTS -->
+            <a href="#"
+               class="sidebar-link text-decoration-none p-3 <?= $isClient ? '' : 'd-none' ?>"
+               data-section="products"
+               onclick="openSection('products'); return false;">
+
+                <i class="fa-solid fa-box me-3"></i>
+
+                <span class="hide-on-collapse">
+                    Products
+                </span>
+            </a>
+
+            <!-- CUSTOM -->
+            <a href="#"
+               class="sidebar-link text-decoration-none p-3 <?= $isClient ? '' : 'd-none' ?> "
+               data-section="custom"
+               onclick="openSection('custom'); return false;">
+
+                <i class="fa-solid fa-pen me-3"></i>
+
+                <span class="hide-on-collapse">
+                    Custom
+                </span>
+            </a>
+
+            <!-- BOOKING CLIENT-->
+            <a href="#"
+               class="sidebar-link text-decoration-none p-3 <?= $isClient ? '' : 'd-none' ?> "
+               data-section="bookingClient"
+               onclick="openSection('bookingClient'); return false;">
+
+                <i class="fa-regular fa-calendar me-3"></i>
+
+                <span class="hide-on-collapse">
+                    Booking Client
+                </span>
+            </a>
+
             <!-- ANALYTICS -->
             <a href="#"
                class="sidebar-link text-decoration-none p-3 <?= $isAdmin ? '' : 'd-none' ?>"
+               data-section="analytics"
                onclick="openSection('analytics'); return false;">
 
                 <i class="fa-solid fa-chart-bar me-3"></i>
@@ -62,6 +102,7 @@ include 'header_dashboard.php';
             <!-- CLIENT -->
             <a href="#"
                class="sidebar-link text-decoration-none p-3 <?= $isAdmin ? '' : 'd-none' ?>"
+               data-section="client"
                onclick="openSection('client'); return false;">
 
                 <i class="fas fa-users me-3"></i>
@@ -71,21 +112,12 @@ include 'header_dashboard.php';
                 </span>
             </a>
 
-            <!-- PRODUCTS -->
-            <a href="#"
-               class="sidebar-link text-decoration-none p-3 <?= $isAdmin ? 'd-none' : '' ?>"
-               onclick="openSection('products'); return false;">
-
-                <i class="fa-solid fa-box me-3"></i>
-
-                <span class="hide-on-collapse">
-                    Products
-                </span>
-            </a>
+            
 
             <!-- MANAGE PRODUCTS -->
             <a href="#"
                class="sidebar-link text-decoration-none p-3 <?= $isAdmin ? '' : 'd-none' ?>"
+               data-section="manageProducts"
                onclick="openSection('manageProducts'); return false;">
 
                 <i class="fa-solid fa-box me-3"></i>
@@ -95,21 +127,12 @@ include 'header_dashboard.php';
                 </span>
             </a>
 
-            <!-- CUSTOM -->
-            <a href="#"
-               class="sidebar-link text-decoration-none p-3 <?= $isAdmin ? 'd-none' : '' ?>"
-               onclick="openSection('custom'); return false;">
-
-                <i class="fa-solid fa-pen me-3"></i>
-
-                <span class="hide-on-collapse">
-                    Custom
-                </span>
-            </a>
+            
 
             <!-- MANAGE CUSTOM -->
             <a href="#"
                class="sidebar-link text-decoration-none p-3 <?= $isAdmin ? '' : 'd-none' ?>"
+               data-section="manageCustom"
                onclick="openSection('manageCustom'); return false;">
 
                 <i class="fa-solid fa-pen me-3"></i>
@@ -119,15 +142,29 @@ include 'header_dashboard.php';
                 </span>
             </a>
 
-            <!-- BOOKING -->
+            <!-- BOOKING ADMIN -->
             <a href="#"
                class="sidebar-link text-decoration-none p-3 <?= $isAdmin ? '' : 'd-none' ?>"
+               data-section="booking"
                onclick="openSection('booking'); return false;">
 
                 <i class="fa-regular fa-calendar me-3"></i>
 
                 <span class="hide-on-collapse">
-                    Booking
+                    Admin booking
+                </span>
+            </a>
+
+            <!-- PURCHASE ADMIN -->
+            <a href="#"
+               class="sidebar-link text-decoration-none p-3 <?= $isAdmin ? '' : 'd-none' ?>"
+               data-section="purchaseAdmin"
+               onclick="openSection('purchaseAdmin'); return false;">
+
+                <i class="fa-solid fa-cash-register me-3"></i>
+
+                <span class="hide-on-collapse">
+                    Purchase Admin
                 </span>
             </a>
 
@@ -183,6 +220,40 @@ include 'header_dashboard.php';
 
             </section>
 
+            <!-- PRODUCTS -->
+            <section id="products" class="d-none">
+
+                <h2>Products</h2>
+
+                <p class="text-muted">
+                    Streamline your workflow with our intuitive dashboard.
+                </p>
+
+            </section>
+
+            <!-- CUSTOM -->
+            <section id="custom" class="d-none">
+
+                <h2>Custom</h2>
+
+                <p class="text-muted">
+                    Streamline your workflow with our intuitive dashboard.
+                </p>
+
+            </section>
+
+            <section id="bookingClient" class="d-none">
+
+                <h2>Booking</h2>
+
+                <p class="text-muted">
+                    Streamline your workflow with our intuitive dashboard.
+                </p>
+
+                <?php include 'bookingClient.php'; ?>
+
+            </section>
+
             <!-- ANALYTICS -->
             <section id="analytics" class="d-none">
 
@@ -199,20 +270,8 @@ include 'header_dashboard.php';
 
                 <?php include 'users.php'; ?>
 
-            
-
             </section>
 
-            <!-- PRODUCTS -->
-            <section id="products" class="d-none">
-
-                <h2>Products</h2>
-
-                <p class="text-muted">
-                    Streamline your workflow with our intuitive dashboard.
-                </p>
-
-            </section>
 
             <!-- MANAGE PRODUCTS -->
             <section id="manageProducts" class="d-none">
@@ -222,16 +281,6 @@ include 'header_dashboard.php';
 
             </section>
 
-            <!-- CUSTOM -->
-            <section id="custom" class="d-none">
-
-                <h2>Custom</h2>
-
-                <p class="text-muted">
-                    Streamline your workflow with our intuitive dashboard.
-                </p>
-
-            </section>
 
             <!-- MANAGE CUSTOM -->
             <section id="manageCustom" class="d-none">
@@ -244,6 +293,12 @@ include 'header_dashboard.php';
             <section id="booking" class="d-none">
 
                 <?php include 'bookings.php'; ?>
+            </section>
+
+            <!-- PURCHASE ADMIN -->
+            <section id="purchaseAdmin" class="d-none">
+
+                <?php include 'purchases.php'; ?>
             </section>
 
         </div>
@@ -270,13 +325,15 @@ function openSection(section) {
     // lista sezioni
     const sections = [
         'dashboard',
+        'products',
+        'custom',
+        'bookingClient',
         'analytics',
         'client',
-        'products',
         'manageProducts',
-        'custom',
         'manageCustom',
-        'booking'
+        'booking',
+        'purchaseAdmin'
     ];
 
     // nasconde tutte
@@ -304,7 +361,7 @@ function openSection(section) {
 
     // aggiunge active al link corretto
     const activeLink = document.querySelector(
-        `.sidebar-link[onclick*="${section}"]`
+        `.sidebar-link[data-section="${section}"]`
     );
 
     if (activeLink) {
@@ -320,13 +377,15 @@ window.addEventListener("load", () => {
 
     const valid = [
         'dashboard',
+        'products',
+        'custom',
+        'bookingClient',
         'analytics',
         'client',
-        'products',
         'manageProducts',
-        'custom',
         'manageCustom',
-        'booking'
+        'booking',
+        'purchaseAdmin'
     ];
 
     function init() {
