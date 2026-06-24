@@ -1,10 +1,11 @@
 <?php  
+require_once __DIR__ . '/../../config/config.php';
 
 //partire la sessione
 session_start();
 
 //richiamo del singleton per attivare le PDO
-require_once __DIR__ . '/classes/Db.php';
+require_once __DIR__ . '/../../classes/Db.php';
 
 
 $errors = [];
@@ -85,9 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
 
-
-<?php include 'header.php'?>
-
+<?php include __DIR__ . '/../components/header.php'?>
 
 <main class="mainProject">
 
@@ -193,4 +192,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 </main>
 
 
-<?php include 'footer.php'?>
+<?php include __DIR__ . '/../components/footer.php'?> <?php // path aggiornato dopo riorganizzazione cartelle ?>

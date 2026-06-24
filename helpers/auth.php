@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config/config.php';
 
 function requireLogin(): void 
 {
@@ -10,7 +11,7 @@ function requireLogin(): void
 
     if(!isset($_SESSION['user_id'])){
 
-        header('Location: login.php');
+        header('Location: ' . BASE_URL . '/ui/page/login.php');
         exit;
 
     }
@@ -23,7 +24,7 @@ function requireAdmin(): void
 
     if(($_SESSION['user_role'] ?? '') !== 'admin'){
 
-        header('Location: index.php');
+        header('Location: ' . BASE_URL . '/index.php');
         exit;
 
     }
@@ -63,7 +64,7 @@ function logout(): void
     $_SESSION = [];
     session_destroy();
 
-    header('Location: index.php');
+    header('Location: ' . BASE_URL . '/index.php');
     exit;
 }
 

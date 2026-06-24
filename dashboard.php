@@ -86,6 +86,19 @@ include 'header_dashboard.php';
                 </span>
             </a>
 
+            <!-- PURCHASE CLIENT -->
+            <a href="#"
+               class="sidebar-link text-decoration-none p-3 <?= $isClient ? '' : 'd-none' ?>"
+               data-section="purchaseClient"
+               onclick="openSection('purchaseClient'); return false;">
+
+                <i class="fa-solid fa-basket-shopping me-3"></i>
+
+                <span class="hide-on-collapse">
+                    Purchase Client
+                </span>
+            </a>
+
             <!-- ANALYTICS -->
             <a href="#"
                class="sidebar-link text-decoration-none p-3 <?= $isAdmin ? '' : 'd-none' ?>"
@@ -220,6 +233,7 @@ include 'header_dashboard.php';
 
             </section>
 
+
             <!-- PRODUCTS -->
             <section id="products" class="d-none">
 
@@ -230,6 +244,7 @@ include 'header_dashboard.php';
                 </p>
 
             </section>
+
 
             <!-- CUSTOM -->
             <section id="custom" class="d-none">
@@ -242,15 +257,19 @@ include 'header_dashboard.php';
 
             </section>
 
+
+            <!-- BOOKING CLIENT -->
             <section id="bookingClient" class="d-none">
 
-                <h2>Booking</h2>
+                <?php include __DIR__ . '/customer/bookingClient.php'; ?>
 
-                <p class="text-muted">
-                    Streamline your workflow with our intuitive dashboard.
-                </p>
+            </section>
 
-                <?php include 'bookingClient.php'; ?>
+
+            <!-- PURCHASE CLIENT -->
+            <section id="purchaseClient" class="d-none">
+
+                <?php include __DIR__ . '/customer/purchaseClient.php'; ?>
 
             </section>
 
@@ -268,7 +287,7 @@ include 'header_dashboard.php';
             <!-- CLIENT -->
             <section id="client" class="d-none">
 
-                <?php include 'users.php'; ?>
+                <?php // include __DIR__ . '/admin/users.php'; ?>
 
             </section>
 
@@ -276,7 +295,7 @@ include 'header_dashboard.php';
             <!-- MANAGE PRODUCTS -->
             <section id="manageProducts" class="d-none">
 
-                <?php include 'products.php'; ?>
+                <?php //include __DIR__ . '/admin/products.php'; ?>
                 </p>
 
             </section>
@@ -285,20 +304,20 @@ include 'header_dashboard.php';
             <!-- MANAGE CUSTOM -->
             <section id="manageCustom" class="d-none">
 
-                <?php include 'customizations.php'; ?>
+                <?php //include __DIR__ . '/admin/customizations.php'; ?>
 
             </section>
 
             <!-- BOOKING -->
             <section id="booking" class="d-none">
 
-                <?php include 'bookings.php'; ?>
+                <?php //include __DIR__ . '/admin/bookings.php'; ?>
             </section>
 
             <!-- PURCHASE ADMIN -->
             <section id="purchaseAdmin" class="d-none">
 
-                <?php include 'purchases.php'; ?>
+                <?php // include __DIR__ . '/admin/purchases.php'; ?>
             </section>
 
         </div>
@@ -328,6 +347,7 @@ function openSection(section) {
         'products',
         'custom',
         'bookingClient',
+        'purchaseClient',
         'analytics',
         'client',
         'manageProducts',
@@ -380,6 +400,7 @@ window.addEventListener("load", () => {
         'products',
         'custom',
         'bookingClient',
+        'purchaseClient',
         'analytics',
         'client',
         'manageProducts',

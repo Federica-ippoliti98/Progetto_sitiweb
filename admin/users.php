@@ -1,7 +1,7 @@
 <?php  
-
-require_once __DIR__ . '/helpers/auth.php';
-require_once __DIR__ . '/classes/User.php';
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../helpers/auth.php';
+require_once __DIR__ . '/../classes/User.php';
 
 //verifica che sono admin -> funzione
 requireAdmin();
@@ -116,7 +116,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'toggle
     $users = User::findAll();
 
     //header dashboard
-    include 'header_dashboard.php';
+    include __DIR__ . '/../header_dashboard.php';
 ?>
 
 <!-- MAIN CONTENT -->

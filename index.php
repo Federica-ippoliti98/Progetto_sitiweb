@@ -1,4 +1,8 @@
-<?php include 'header.php'?>
+<?php 
+require_once __DIR__ . '/config/config.php';
+include __DIR__ . '/ui/components/header.php'
+
+?>
 
 <main>
 
@@ -496,4 +500,4 @@
 
 </main>
 
-<?php include 'footer.php'?>
+<?php include __DIR__ . '/ui/components/footer.php'?>

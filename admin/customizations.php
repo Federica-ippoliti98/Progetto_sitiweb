@@ -1,7 +1,7 @@
 <?php
-
-require_once __DIR__ . '/helpers/auth.php';
-require_once __DIR__ . '/classes/Product.php';
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../helpers/auth.php';
+require_once __DIR__ . '/../classes/Customization.php';
 
 requireAdmin();
 
@@ -11,17 +11,17 @@ $errors = [];
 $success = '';
 
 
-// -------------------------------- CREATE PRODUCT --------------------------------
+// -------------------------------- CREATE CUSTOMIZATION --------------------------------
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'create') {
+if (
+    $_SERVER['REQUEST_METHOD'] === 'POST'
+    && ($_POST['action'] ?? '') === 'create_customization'
+) {
 
     $name = trim($_POST['name'] ?? '');
     $description = trim($_POST['description'] ?? '');
     $price = (float) ($_POST['price'] ?? 0);
     $is_active = isset($_POST['is_active']);
-
-    $file_path = trim($_POST['file_path'] ?? '');
-    $image_path = trim($_POST['image_path'] ?? '');
 
     if ($name === '') {
         $errors[] = 'Name is required';
@@ -33,89 +33,127 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'creat
 
     if (empty($errors)) {
 
-        Product::create(
+        Customization::createCustom(
             $name,
             $description,
             $price,
-            $is_active,
-            $file_path ?: null,
-            $image_path ?: null
+            $is_active
         );
 
-        $success = 'Product created successfully';
+        $success = 'Customization created successfully';
 
         $_POST = [];
     }
 }
 
 
-// -------------------------------- DELETE PRODUCT --------------------------------
+// -------------------------------- DELETE CUSTOMIZATION --------------------------------
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'delete') {
+if (
+    $_SERVER['REQUEST_METHOD'] === 'POST'
+    && ($_POST['action'] ?? '') === 'delete_customization'
+) {
 
-    $productId = (int) ($_POST['product_id'] ?? 0);
+    $customizationId = (int) ($_POST['customization_id'] ?? 0);
 
-    if (Product::delete($productId)) {
+    if (Customization::deleteCustom($customizationId)) {
 
-        $success = 'Product deleted successfully';
+        $success = 'Customization deleted successfully';
 
     } else {
 
-        $errors[] = 'Failed to delete product';
+        $errors[] = 'Failed to delete customization';
     }
 }
 
 
 // -------------------------------- TOGGLE STATUS --------------------------------
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'toggle_active') {
+if (
+    $_SERVER['REQUEST_METHOD'] === 'POST'
+    && ($_POST['action'] ?? '') === 'toggle_customization'
+) {
 
-    $productId = (int) ($_POST['product_id'] ?? 0);
+    $customizationId = (int) ($_POST['customization_id'] ?? 0);
 
-    if (Product::toggleActive($productId)) {
+    if (Customization::toggleActiveCustom($customizationId)) {
 
-        $success = 'Product status updated';
+        $success = 'Customization status updated';
 
     } else {
 
-        $errors[] = 'Failed to update product status';
+        $errors[] = 'Failed to update customization status';
     }
 }
 
 
-$products = Product::findAll();
-
-include 'header_dashboard.php';
+$customizations = Customization::findAllCustom();
 ?>
 
 <main class="dashboard-content">
 
     <header class="dashboard-header mb-4">
+
         <h2 class="text-dash fw-bold mb-1">
-            Product Management
+            Customizations Management
         </h2>
+
         <p class="text-50 mb-0">
-            Create and manage products.
+            Create and manage customizations.
         </p>
+
     </header>
+
+    <?php if (!empty($success)): ?>
+
+        <div class="alert alert-success">
+            <?= htmlspecialchars($success) ?>
+        </div>
+
+    <?php endif; ?>
+
+    <?php if (!empty($errors)): ?>
+
+        <div class="alert alert-danger">
+
+            <?php foreach ($errors as $error): ?>
+
+                <div><?= htmlspecialchars($error) ?></div>
+
+            <?php endforeach; ?>
+
+        </div>
+
+    <?php endif; ?>
 
     <div class="row g-4">
 
         <!-- FORM -->
 
         <div class="col-lg-4">
+
             <div class="dashboard-panel">
 
                 <h4 class="text-dash fw-bold mb-3">
-                    <i class="fas fa-box"></i> New Product
+
+                    <i class="fas fa-sliders-h"></i>
+
+                    New Customization
+
                 </h4>
 
                 <form method="post">
 
-                    <input type="hidden" name="action" value="create">
+                    <input
+                        type="hidden"
+                        name="action"
+                        value="create_customization">
 
                     <div class="mb-3">
-                        <label class="form-label">Name</label>
+
+                        <label class="form-label">
+                            Name
+                        </label>
 
                         <input
                             type="text"
@@ -123,19 +161,27 @@ include 'header_dashboard.php';
                             name="name"
                             value="<?= htmlspecialchars($_POST['name'] ?? '') ?>"
                             required>
+
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Description</label>
+
+                        <label class="form-label">
+                            Description
+                        </label>
 
                         <textarea
                             class="form-control"
                             name="description"
                             rows="4"><?= htmlspecialchars($_POST['description'] ?? '') ?></textarea>
+
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Price (€)</label>
+
+                        <label class="form-label">
+                            Price (€)
+                        </label>
 
                         <input
                             type="number"
@@ -145,26 +191,7 @@ include 'header_dashboard.php';
                             name="price"
                             value="<?= htmlspecialchars($_POST['price'] ?? '') ?>"
                             required>
-                    </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">File Path</label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="file_path"
-                            value="<?= htmlspecialchars($_POST['file_path'] ?? '') ?>">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Image Path</label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="image_path"
-                            value="<?= htmlspecialchars($_POST['image_path'] ?? '') ?>">
                     </div>
 
                     <div class="form-check mb-3">
@@ -172,34 +199,48 @@ include 'header_dashboard.php';
                         <input
                             type="checkbox"
                             class="form-check-input"
-                            id="is_active"
+                            id="custom_is_active"
                             name="is_active"
                             <?= isset($_POST['is_active']) || !$_POST ? 'checked' : '' ?>>
 
-                        <label class="form-check-label" for="is_active">
+                        <label
+                            class="form-check-label"
+                            for="custom_is_active">
+
                             Active
+
                         </label>
 
                     </div>
 
-                    <button type="submit" class="btn btn-dash w-100 text-white">
+                    <button
+                        type="submit"
+                        class="btn btn-dash w-100 text-white">
+
                         <i class="fas fa-plus"></i>
-                        Create Product
+
+                        Create Customization
+
                     </button>
 
                 </form>
 
             </div>
-        </div>
 
+        </div>
 
         <!-- TABLE -->
 
         <div class="col-lg-8">
+
             <div class="dashboard-panel">
 
                 <h4 class="text-dash fw-bold mb-3">
-                    <i class="fas fa-boxes"></i> All Products
+
+                    <i class="fas fa-list"></i>
+
+                    All Customizations
+
                 </h4>
 
                 <div class="table-responsive">
@@ -207,32 +248,33 @@ include 'header_dashboard.php';
                     <table class="table table-dash table-light text-dark">
 
                         <thead>
+
                             <tr>
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th>Status</th>
-                                <th>Created</th>
                                 <th>Actions</th>
                             </tr>
+
                         </thead>
 
                         <tbody>
 
-                            <?php foreach ($products as $product): ?>
+                            <?php foreach ($customizations as $customization): ?>
 
                                 <tr>
 
                                     <td>
-                                        <?= htmlspecialchars($product['name']) ?>
+                                        <?= htmlspecialchars($customization['name']) ?>
                                     </td>
 
                                     <td>
-                                        € <?= number_format($product['price'], 2) ?>
+                                        € <?= number_format($customization['price'], 2) ?>
                                     </td>
 
                                     <td>
 
-                                        <?php if ($product['is_active']): ?>
+                                        <?php if ($customization['is_active']): ?>
 
                                             <span class="badge bg-success">
                                                 Active
@@ -248,36 +290,34 @@ include 'header_dashboard.php';
 
                                     </td>
 
-                                    <td>
-                                        <?= date('d M Y', strtotime($product['created_at'])) ?>
-                                    </td>
-
                                     <td class="text-end">
 
-                                        <!-- EDIT -->
-
-                                        <a href="edit-product.php?id=<?= (int) $product['id'] ?>"
-                                           class="btn btn-sm btn-dash">
+                                        <a
+                                            href="edit-customization.php?id=<?= (int)$customization['id'] ?>"
+                                            class="btn btn-sm btn-dash">
 
                                             <i class="fas fa-edit text-white"></i>
 
                                         </a>
 
-                                        <!-- TOGGLE -->
-
-                                        <form method="post" class="d-inline">
-
-                                            <input type="hidden" name="action" value="toggle_active">
+                                        <form
+                                            method="post"
+                                            class="d-inline">
 
                                             <input
                                                 type="hidden"
-                                                name="product_id"
-                                                value="<?= (int) $product['id'] ?>">
+                                                name="action"
+                                                value="toggle_customization">
+
+                                            <input
+                                                type="hidden"
+                                                name="customization_id"
+                                                value="<?= (int)$customization['id'] ?>">
 
                                             <button
                                                 type="submit"
                                                 class="btn btn-sm btn-dash"
-                                                onclick="return confirm('Change product status?')">
+                                                onclick="return confirm('Change customization status?')">
 
                                                 <i class="fas fa-power-off text-white"></i>
 
@@ -285,21 +325,24 @@ include 'header_dashboard.php';
 
                                         </form>
 
-                                        <!-- DELETE -->
-
-                                        <form method="post" class="d-inline">
-
-                                            <input type="hidden" name="action" value="delete">
+                                        <form
+                                            method="post"
+                                            class="d-inline">
 
                                             <input
                                                 type="hidden"
-                                                name="product_id"
-                                                value="<?= (int) $product['id'] ?>">
+                                                name="action"
+                                                value="delete_customization">
+
+                                            <input
+                                                type="hidden"
+                                                name="customization_id"
+                                                value="<?= (int)$customization['id'] ?>">
 
                                             <button
                                                 type="submit"
                                                 class="btn btn-sm btn-dash"
-                                                onclick="return confirm('Delete <?= htmlspecialchars($product['name'], ENT_QUOTES) ?>?')">
+                                                onclick="return confirm('Delete <?= htmlspecialchars($customization['name'], ENT_QUOTES) ?>?')">
 
                                                 <i class="fas fa-trash text-white"></i>
 
@@ -320,6 +363,7 @@ include 'header_dashboard.php';
                 </div>
 
             </div>
+
         </div>
 
     </div>

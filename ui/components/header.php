@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/style.css">
 
     <title>Orbita Web</title>
 </head>
@@ -27,7 +27,7 @@
         <div class="container-fluid px-4 px-md-5">
 
             <!-- Logo -->
-            <a class="navbar-brand logo" href="index.php">
+            <a class="navbar-brand logo" href="<?= BASE_URL ?>/index.php">
                 <i class="fa-solid fa-earth-africa"></i>
                 Orbita Web
             </a>
@@ -43,31 +43,31 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.php">Home</a>
+                        <a class="nav-link active"  href="<?= BASE_URL ?>/index.php">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Chi siamo</a>
+                        <a class="nav-link"  href="<?= BASE_URL ?>/index.php">Chi siamo</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Prodotti</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>/ui/page/buyproject.php">Prodotti</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Contatti</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>/index.php">Contatti</a>
                     </li>
 
                     <!-- Login -->
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm w-100 w-lg-auto mb-2 mb-lg-0" href="login.php">
+                        <a class="btn btn-outline-light btn-sm w-100 w-lg-auto mb-2 mb-lg-0" href="<?= BASE_URL ?>/ui/page/login.php">
                             Login
                         </a>
                     </li>
 
                     <!-- Register -->
                     <li class="nav-item">
-                        <a class="btn btn-primary btn-sm w-100 w-lg-auto" href="register.php">
+                        <a class="btn btn-primary btn-sm w-100 w-lg-auto" href="<?= BASE_URL ?>/ui/page/register.php">
                             Register
                         </a>
                     </li>
@@ -82,7 +82,7 @@
 
 
 <!-- Bootstrap JS -->
-<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="<?= BASE_URL ?>/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 
 

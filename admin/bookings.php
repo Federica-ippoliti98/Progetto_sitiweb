@@ -1,8 +1,8 @@
 <?php
-
-require_once __DIR__ . '/helpers/auth.php';
-require_once __DIR__ . '/classes/User.php';
-require_once __DIR__ . '/classes/Booking.php';
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../helpers/auth.php';
+require_once __DIR__ . '/../classes/User.php';
+require_once __DIR__ . '/../classes/Booking.php';
 
 // verifica admin
 requireAdmin();
@@ -53,7 +53,7 @@ $countCancelled = Booking::countByStatus('cancelled');
 
 
 // header
-include 'header_dashboard.php';
+include __DIR__ . '/../header_dashboard.php';
 
 ?>
 

@@ -1,7 +1,7 @@
 <?php
-
-require_once __DIR__ . '/helpers/auth.php'; // path aggiornato dopo riorganizzazione cartelle
-require_once __DIR__ . '/classes/Booking.php';
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../helpers/auth.php'; // path aggiornato dopo riorganizzazione cartelle
+require_once __DIR__ . '/../classes/Booking.php';
 
 //chi può accedere: chiunque sia loggato (client o admin)
 requireLogin();
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'cance
 $myBookings = Booking::findByUserId($user['id']);
 
 //header dashboard
-include 'header_dashboard.php';
+include '/../header_dashboard.php';
 ?>
 
 

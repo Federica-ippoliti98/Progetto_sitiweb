@@ -1,7 +1,8 @@
 <?php
 
-require_once __DIR__ . '/helpers/auth.php';
-require_once __DIR__ . '/classes/Purchase.php';
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../helpers/auth.php';
+require_once __DIR__ . '/../classes/Purchase.php';
 
 requireAdmin();
 $user = currentUser();
@@ -37,7 +38,7 @@ $allPurchases = Purchase::findAll();
 $totalCount = Purchase::countAll();
 $totalRevenue = Purchase::totalRevenue();
 
-include 'header_dashboard.php';
+include __DIR__ . '/../header_dashboard.php';
 ?>
 
 <!-- MAIN -->

@@ -1,8 +1,8 @@
 <?php
 
-
-require_once __DIR__ . '/helpers/auth.php';
-require_once __DIR__ . '/classes/User.php';
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../helpers/auth.php';
+require_once __DIR__ . '/../classes/User.php';
 
 //verifica che sono admin -> funzione
 requireAdmin();
@@ -12,7 +12,7 @@ $user = currentUser(); // mi dice chi sono se admin o client
 $errors = [];
 $success = '';
 
-include 'header_dashboard.php';
+include __DIR__ . '/../header_dashboard.php';
 ?>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">

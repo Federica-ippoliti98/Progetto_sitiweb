@@ -1,10 +1,10 @@
 <?php  
-
+require_once __DIR__ . '/../../config/config.php';
 //partire la sessione
 session_start();
 
 //richiamo del singleton per attivare le PDO
-require_once __DIR__ . '/classes/Db.php';
+require_once __DIR__ . '/../../classes/Db.php';
 
 $errors = [];
 $success = false;
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             $_SESSION['user_role']= $user['role'];
 
             //login riuscito
-            header('Location: dashboard.php');
+            header('Location: ' . BASE_URL . '/dashboard.php'); // path aggiornato dopo riorganizzazione cartelle
             exit;
 
         }
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 ?>
 
 
-<?php include 'header.php'?>
+<?php include __DIR__ . '/../components/header.php'?> <?php // path aggiornato dopo riorganizzazione cartelle ?>
 
 <main class="mainProject py-5">
 
@@ -140,4 +140,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 </main>
 
-<?php include 'footer.php'?>
+<?php include __DIR__ . '/../components/footer.php'?> <?php // path aggiornato dopo riorganizzazione cartelle ?>
